@@ -1,18 +1,17 @@
-function shift(arr) {
-    let first = arr[0];
-
-    if (arr.length === 0) {
-        return undefined;
+function missing(arr) {
+    let newArr = [];
+    for (x = 0; x < arr.length - 1; x++) {
+        let current = arr[x];
+        while (arr.indexOf(current + 1) != x + 1) {
+            newArr.push(current + 1);
+            current++;
+        }
     }
 
-    for (ix = 0; ix < arr.length - 1; ix++) {
-        arr[ix] = arr[ix + 1];
-    }
-
-    arr.length = arr.length - 1;
-    return first;
+    return newArr;
 }
 
-let count = [1, 2, 3];
-console.log(shift(count));           // 1
-console.log(count);                  // [ 2, 3 ]
+console.log(missing([-3, -2, 1, 5]));                  // [-1, 0, 2, 3, 4]
+console.log(missing([1, 2, 3, 4]));                    // []
+console.log(missing([1, 5]));                          // [2, 3, 4]
+console.log(missing([6]));                             // []
