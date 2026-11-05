@@ -1,4 +1,5 @@
-// not solved correctly: 1, 5 (counter with hoisting), 10
+// not solved correctly in medium 1: 1, 5 (counter with hoisting), 10
+// not solved correctly in medium 2: 1, 4
 
 //4, my solution
 
